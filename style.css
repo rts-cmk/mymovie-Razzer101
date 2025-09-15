@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 2em;
+}
+
+h1, h2{
+    color: #0c0041;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* #region Header */
+#mainHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+#mainHeader h1 {
+    margin: 0;
+    margin-left: 3.5em;
+    font-size: 2em;
+}
+
+#mainHeader button {
+    margin-left: auto;
+    padding: 10px;
+}
+/* #endregion */
+
+.nowShowingSec{
+    margin-bottom: 3em;
+}
+
+.nowShowingTitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+.nowShowingTitle h2{
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.nowShowingTitle button{
+    border-radius: 15px;
+    border: 2px solid #00000050;
+    padding: 0 10px;
+    color: #00000050;
+    background-color: transparent;
+}
+
+.movieDisplay{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: 0;
+}
+
+.movieDisplay::-webkit-scrollbar {
+    display: none;
+}
+
+.movieDisplay figure{
+    margin: 0 1em;
+    width: 45vw;
+}
+
+.movieDisplay img{
+    width: 45vw;
+    border-radius: 10px;
+    margin-bottom: .9em;
+}
+
+.movieDisplay figcaption{
+    text-wrap: wrap;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.movieDisplay h3{
+    font-size: 1.1em;
+    margin: 0;
+    margin-bottom: .5em;
+}
+
+.movieDisplay p{
+    font-size: 1em;
+    color: #00000080;
+    margin: 0;
+}
+
+.movieDisplay p span{
+    font-size: 1.3em;
+    color: #ffc400;
+    margin: 0;
+}
