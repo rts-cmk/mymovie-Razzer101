@@ -27,21 +27,30 @@ function displayMovies(movies){
             </div>
             <div class="movieDisplay">
                 ${
-
                     movies.results.map((movie) => {
                     return /*html*/`
-                        <figure class="movie">
-                            <img src="${baseImgUrl + movie.poster_path}" alt="${movie.title} (Banner)">
-                            <figcaption>
-                                <h3>${movie.title}</h3>
-                                <p><span>&#9733</span> ${movie.vote_average}/10 IMDb</p>
-                            </figcaption>
-                        </figure>
+                        <article>
+                            <figure>
+                                <img src="${baseImgUrl + movie.poster_path}" alt="${movie.title} (Banner)">
+                            </figure>
+                            <h3>${movie.title}</h3>
+                            <p><span>&#9733</span> ${movie.vote_average}/10 IMDb</p>
+                        </article>
                     `
                     }).join("")
                 }
             </div>
         </section>
+        <section class="popularSec"></section>
     `
     mainWrapper.insertAdjacentHTML("beforeend", movieContent)
+
+    fetch("https://api.themoviedb.org/3/movie/popular", {
+    headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${token}`
+    }
+    })
+    .then((respone) => respone.json())
+    .then((popularMovies) => {console.log(popularMovies); displayPMovies(popularMovies)})
 }
