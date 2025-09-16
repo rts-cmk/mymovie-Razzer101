@@ -15,7 +15,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", {
 function displayMovies(movies){
     const movieHeader = /*html*/ `
             <h1>MyMovies</h1>
-            <button></button>
+            <button id="darkModeBtn"></button>
     `
     mainHeader.insertAdjacentHTML("beforeend", movieHeader)
 
@@ -53,4 +53,7 @@ function displayMovies(movies){
     })
     .then((respone) => respone.json())
     .then((popularMovies) => {displayPMovies(popularMovies); console.log(popularMovies)})
+
+    const darkModeBtn = mainHeader.querySelector("#darkModeBtn")
+    darkModeBtn.addEventListener("click", handleDarkModeBtn)
 }
