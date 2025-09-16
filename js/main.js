@@ -15,7 +15,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", {
 function displayMovies(movies){
     const movieHeader = /*html*/ `
             <h1>MyMovies</h1>
-            <button id="darkModeBtn"></button>
+            <button id="darkModeBtn"><div></div></button>
     `
     mainHeader.insertAdjacentHTML("beforeend", movieHeader)
 

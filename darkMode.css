@@ -27,8 +27,22 @@ h2 {
 }
 
 #mainHeader button {
-    padding: 10px;
+    border: none;
+    padding: 3px;
+    width: 5em;
+    border-radius: 2em;
+    background-color: white;
+    display: flex;
+    justify-content: end;
 }
+
+#mainHeader button div{
+    width: 2em;
+    height: 2em;
+    background-color: black;
+    border-radius: 50%;
+}
+
 
 /* #endregion */
 
