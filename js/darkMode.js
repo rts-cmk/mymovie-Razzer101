@@ -6,11 +6,11 @@ if(localStorage.getItem("DarkMode")){
     darkModeList.classList.remove("darkMode")
 }
 
-function handleDarkModeBtn(event){
+function handleDarkModeBtn(){
     darkModeList.classList.toggle("darkMode")
 
     if (darkModeList.classList.contains("darkMode")) {
-    localStorage.setItem("DarkMode", "1")
+    localStorage.setItem("DarkMode", 1)
     } else {
     localStorage.removeItem("DarkMode")
 }
