@@ -10,7 +10,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", {
     }
 })
 .then((respone) => respone.json())
-.then((movies) => {console.log(movies); displayMovies(movies)})
+.then((movies) => {displayMovies(movies)})
 
 function displayMovies(movies){
     const movieHeader = /*html*/ `
@@ -52,5 +52,5 @@ function displayMovies(movies){
     }
     })
     .then((respone) => respone.json())
-    .then((popularMovies) => {console.log(popularMovies); displayPMovies(popularMovies)})
+    .then((popularMovies) => {displayPMovies(popularMovies); console.log(popularMovies)})
 }

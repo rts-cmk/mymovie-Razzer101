@@ -1,12 +1,4 @@
 function displayPMovies(popularMovies){
-    fetch("https://api.themoviedb.org/3/genre/movie/list", {
-    headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`
-    }
-    })
-    .then((respone) => respone.json())
-    .then((genres) => {console.log(genres)})
     const popularSec = document.querySelector(".popularSec")
     const popularContent = /*html*/ `
         <div class="popularTitle">
@@ -21,9 +13,20 @@ function displayPMovies(popularMovies){
                         <figure>
                             <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                         </figure>
-                        <div>
+                        <div class="popularInfo">
                             <h3>${popularMovie.title}</h3>
                             <p><span>&#9733</span> ${popularMovie.vote_average}/10 IMDb</p>
+                            <ul>
+                                ${
+                                    popularMovie.genre_ids.map((id)=>{
+                                        return /*html*/`
+                                        <li>
+                                            ${genres.find(genre => genre.id == id).name}
+                                        </li>
+                                        `
+                                    }).join("")
+                                }
+                            </ul>
                         </div>
                     </article>
                 `
