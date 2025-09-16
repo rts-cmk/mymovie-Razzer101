@@ -29,13 +29,13 @@ function displayMovies(movies){
                 ${
                     movies.results.map((movie) => {
                     return /*html*/`
-                        <article>
+                        <a href="/details.html?id=${movie.id}">
                             <figure>
                                 <img src="${baseImgUrl + movie.poster_path}" alt="${movie.title} (Banner)">
                             </figure>
                             <h3>${movie.title}</h3>
-                            <p><span>&#9733</span> ${movie.vote_average}/10 IMDb</p>
-                        </article>
+                            <p><span>&#9733</span> ${movie.vote_average.toFixed(1)}/10 IMDb</p>
+                        </a>
                     `
                     }).join("")
                 }

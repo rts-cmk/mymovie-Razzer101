@@ -9,13 +9,13 @@ function displayPMovies(popularMovies){
             ${
                 popularMovies.results.map((popularMovie) => {
                 return /*html*/`
-                    <article>
+                    <a href="/details.html?id=${popularMovie.id}">
                         <figure>
                             <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                         </figure>
                         <div class="popularInfo">
                             <h3>${popularMovie.title}</h3>
-                            <p><span>&#9733</span> ${popularMovie.vote_average}/10 IMDb</p>
+                            <p><span>&#9733</span> ${popularMovie.vote_average.toFixed(1)}/10 IMDb</p>
                             <ul>
                                 ${
                                     popularMovie.genre_ids.map((id)=>{
@@ -28,7 +28,7 @@ function displayPMovies(popularMovies){
                                 }
                             </ul>
                         </div>
-                    </article>
+                    </a>
                 `
                 }).join("")
             }

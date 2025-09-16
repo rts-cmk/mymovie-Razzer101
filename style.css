@@ -32,10 +32,9 @@ h2 {
     border-radius: 2em;
     background-color: #a5a5a5;
     display: flex;
-    justify-content: start;
 }
 
-#mainHeader button div{
+#mainHeader button div {
     width: 2em;
     height: 2em;
     background-color: white;
@@ -80,11 +79,17 @@ h2 {
     display: none;
 }
 
-.movieDisplay article {
-    margin: 0 1em;
+.movieDisplay a {
+    margin: 0;
+    margin-left: 1.5em;
     width: 45vw;
     text-wrap: wrap;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+.movieDisplay a:first-child {
+    margin-left: 0;
 }
 
 .movieDisplay figure {
@@ -101,6 +106,7 @@ h2 {
     font-size: 1.1em;
     margin: 0;
     margin-bottom: .5em;
+    color: black;
 }
 
 .movieDisplay p {
@@ -141,10 +147,12 @@ h2 {
     background-color: transparent;
 }
 
-.popularDisplay article {
+.popularDisplay a {
     display: grid;
     grid-template-columns: 30vw auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 1.5em;
+    text-decoration: none;
 }
 
 .popularDisplay figure {
@@ -164,6 +172,7 @@ h2 {
 .popularInfo h3 {
     margin-top: 5px;
     margin-bottom: 8px;
+    color: black;
 }
 
 .popularInfo p {
@@ -194,6 +203,39 @@ h2 {
     padding: 5px 15px;
     border-radius: 10px;
     margin: 5px 5px;
+}
+
+/* #endregion */
+
+/* #region Dark Mode */
+body.darkMode, 
+body.darkMode #mainHeader button div {
+    background-color: black;
+}
+
+body.darkMode h1,
+body.darkMode h2 {
+    color: #e8e2ff;
+}
+
+body.darkMode #mainHeader button {
+    background-color: white;
+    justify-content: end;
+}
+
+body.darkMode .nowShowingTitle button,
+body.darkMode .popularTitle button {
+    border: 2px solid #ffffffe0;
+    color: #ffffffe0;
+}
+
+body.darkMode .movieDisplay h3,
+body.darkMode .popularInfo h3{
+    color: white;
+}
+
+body.darkMode .movieDisplay p, body.darkMode .popularInfo p {
+    color: #ffffff80;
 }
 
 /* #endregion */

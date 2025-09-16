@@ -1,19 +1,17 @@
-const style = document.querySelector("#style")
+const darkModeList = document.querySelector("body")
 
-if(localStorage.getItem("DarkModeOn")){
-    style.setAttribute("href", "darkMode.css")
+if(localStorage.getItem("DarkMode")){
+    darkModeList.classList.add("darkMode")
 } else {
-    style.setAttribute("href", "style.css");
+    darkModeList.classList.remove("darkMode")
 }
 
 function handleDarkModeBtn(event){
-    event.preventDefault()
+    darkModeList.classList.toggle("darkMode")
 
-    if (style.getAttribute("href") === "style.css") {
-        style.setAttribute("href", "darkMode.css");
-        localStorage.setItem("DarkModeOn", 1)
+    if (darkModeList.classList.contains("darkMode")) {
+    localStorage.setItem("DarkMode", "1")
     } else {
-        style.setAttribute("href", "style.css");
-        localStorage.removeItem("DarkModeOn")
-    }
+    localStorage.removeItem("DarkMode")
+}
 }
