@@ -1,4 +1,3 @@
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMzkwOTRmNWRmM2EwNGM2MDY1ZjY4ZDc4NjNmM2JjZCIsIm5iZiI6MTc1NzkyMDc0Mi43NTcsInN1YiI6IjY4YzdiZGU2ZmUwZjM4MDdlZGNhNzM2YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cldE6JxLAbUYEXs3khu8N5TeX5FupWc3nEZDKu6IpGs"
 const mainWrapper = document.querySelector("#mainWrapper")
 const mainHeader = document.querySelector("#mainHeader")
 const baseImgUrl = "https://image.tmdb.org/t/p/w500"
