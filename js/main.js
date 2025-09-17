@@ -51,7 +51,7 @@ function displayMovies(movies){
     }
     })
     .then((respone) => respone.json())
-    .then((popularMovies) => {displayPMovies(popularMovies); console.log(popularMovies)})
+    .then((popularMovies) => {displayPMovies(popularMovies)})
 
     const darkModeBtn = mainHeader.querySelector("#darkModeBtn")
     darkModeBtn.addEventListener("click", handleDarkModeBtn)

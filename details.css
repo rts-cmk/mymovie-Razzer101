@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+}
+
+/* #region Trailer Section */
+.trailerSec {
+    height: 15em;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+}
+
+.backToMain {
+    color: white;
+    text-decoration: none;
+    margin-top: .5em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.seeTrailer {
+    width: 50%;
+    text-align: center;
+    align-self: end;
+    margin-bottom: 1.5em;
+    text-decoration: none;
+}
+
+.seeTrailer:visited {
+    text-decoration: none;
+}
+
+.seeTrailer div {
+    color: black;
+    background-color: white;
+    width: 13%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-left: 14px;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.seeTrailer p {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+#darkModeBtn {
+    height: 13%;
+    border: none;
+    padding: 3px;
+    width: 4em;
+    border-radius: 2em;
+    background-color: #a5a5a5;
+    display: flex;
+    margin-top: 1.7em;
+}
+
+#darkModeBtn div {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* #endregion */
+
