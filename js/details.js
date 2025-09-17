@@ -28,10 +28,10 @@ function displayDetail(details){
         <section class="detailsSec">
             <article class="title">
                 <h1>${details.title}</h1>
-                <button>&#9829;</button>
+                <button>&#10084;</button>
             </article>
             <article class="content">
-                <p><span>&#9733</span>${details.vote_average.toFixed(1)}/10 IMDb</p>
+                <p class="rating"><span>&#9733</span>${details.vote_average.toFixed(1)}/10 IMDb</p>
                 <ul>
                     ${
                         details.genres.map((genre)=>{
@@ -42,13 +42,8 @@ function displayDetail(details){
                     }
                 </ul>
                 <div class="extraInfo">
-                    <p>Length<span>${Math.floor(details.runtime / 60)}h ${Math.floor(details.runtime % 60)}m</span></p>
-                    <p>
-                        Language
-                        <span>
-                            ${details.spoken_languages[0].english_name}
-                        </span>
-                    </p>
+                    <p>Length<span>${Math.floor(details.runtime / 60)}h ${Math.floor(details.runtime % 60)}min</span></p>
+                    <p>Language<span>${details.spoken_languages[0].english_name}</span></p>
                 </div>
                 <div class="description">
                     <h2>Description</h2>

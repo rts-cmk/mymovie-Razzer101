@@ -2,12 +2,25 @@ body {
     margin: 0;
 }
 
+h1,
+p,
+li,
+figcaption {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    color: #0c0041;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /* #region Trailer Section */
 .trailerSec {
     height: 15em;
     background-size: cover;
     display: flex;
     justify-content: space-around;
+    z-index: 1;
 }
 
 .backToMain {
@@ -21,8 +34,8 @@ body {
 .seeTrailer {
     width: 50%;
     text-align: center;
-    align-self: end;
-    margin-bottom: 1.5em;
+    align-self: center;
+    margin-top: 1em;
     text-decoration: none;
 }
 
@@ -45,6 +58,7 @@ body {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    font-size: .9em;
 }
 
 #darkModeBtn {
@@ -67,3 +81,103 @@ body {
 
 /* #endregion */
 
+/* #region Content */
+.detailsSec {
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+    bottom: 15px;
+    z-index: 2;
+    padding: 1.5em;
+}
+
+/* #region Title */
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 1.4em;
+    width: 75%;
+}
+
+.title button {
+    font-size: 1.8em;
+    background-color: transparent;
+    border: none;
+}
+
+/* #endregion */
+
+.rating {
+    font-size: 1em;
+    color: #00000080;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.rating span {
+    font-size: 1.3em;
+    color: #ffc400;
+}
+
+.content ul {
+    list-style: none;
+    color: #2f00ff56;
+    font-size: .8em;
+    margin: 0;
+    margin-bottom: 1.5em;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.content li {
+    background-color: #efefff;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin: 5px 8px 5px 0;
+}
+
+/* #region Extra Info */
+.extraInfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 1.8em;
+}
+
+.extraInfo p {
+    font-size: 1em;
+    color: #00000080;
+    margin: 0;
+}
+
+.extraInfo p span {
+    display: block;
+    color: black;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* #endregion */
+
+.description h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1em;
+    color: #00000080;
+    margin: 0;
+    line-height: 1.8em;
+}
+
+/* #endregion */
+
+.cast{
+    padding: 0 2em;
+}
