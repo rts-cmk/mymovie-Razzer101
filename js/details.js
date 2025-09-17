@@ -23,7 +23,7 @@ function displayDetail(details){
                 </div>
                 <p>Play Trailer</p>
             </a>
-            <button id="darkModeBtn"><div></div></button>
+            <button id="darkModeBtn"><div class="btnInnerIcon"></div></button>
         </section>
         <section class="detailsSec">
             <article class="title">
@@ -71,4 +71,6 @@ function displayDetail(details){
         </section>
     `
     detailsWrapper.insertAdjacentHTML("beforeend", detailsContent)
+    const darkModeBtn = detailsWrapper.querySelector("#darkModeBtn")
+    darkModeBtn.addEventListener("click", handleDarkModeBtn)
 }

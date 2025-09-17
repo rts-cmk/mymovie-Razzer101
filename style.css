@@ -68,10 +68,8 @@ h2 {
 
 .movieDisplay {
     display: flex;
-    flex-direction: row;
     overflow: auto;
     white-space: nowrap;
-    scrollbar-width: 0;
 }
 
 .movieDisplay::-webkit-scrollbar {
