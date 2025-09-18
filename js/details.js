@@ -2,6 +2,7 @@ const detailsWrapper = document.querySelector("#detailsWrapper")
 const baseImgUrl = "https://image.tmdb.org/t/p/w500"
 let params = new URLSearchParams(window.location.search)
 const id = params.get("id")
+const imgNotFound = "img/imgNotFound.png"
 
 fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,videos`, {
     headers: {
@@ -66,7 +67,7 @@ function displayDetail(details){
                 ${details.credits.cast.map((person) => {
                     return /*html*/ `
                     <figure>
-                        <img src="${baseImgUrl + person.profile_path}" alt="${person.name}" alt="">
+                        <img src="${person.profile_path ? baseImgUrl + person.profile_path : imgNotFound}" alt="${person.name}" alt="">
                         <figcaption>
                             ${person.name}
                         </figcaption>
