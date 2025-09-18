@@ -17,7 +17,7 @@ function displayDetail(details){
     const detailsContent = /*html*/ `
         <section class="trailerSec" style="background-image: url('${baseImgUrl + details.poster_path}');">
             <a class="backToMain" href="index.html">&#11104;</a>
-            <a class="seeTrailer" href="https://www.youtube.com/watch?v=${details.videos.results[0].key}" >
+            <a class="seeTrailer" href="https://www.youtube.com/watch?v=${details.videos.results[0].key}" target="blank_">
                 <div>
                     &#9654;
                 </div>

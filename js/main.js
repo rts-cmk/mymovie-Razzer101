@@ -44,14 +44,7 @@ function displayMovies(movies){
     `
     mainWrapper.insertAdjacentHTML("beforeend", movieContent)
 
-    fetch("https://api.themoviedb.org/3/movie/popular", {
-    headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`
-    }
-    })
-    .then((respone) => respone.json())
-    .then((popularMovies) => {displayPMovies(popularMovies)})
+    displayPMovies()
 
     const darkModeBtn = mainHeader.querySelector("#darkModeBtn")
     darkModeBtn.addEventListener("click", handleDarkModeBtn)
