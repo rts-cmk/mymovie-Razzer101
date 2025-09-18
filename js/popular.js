@@ -23,11 +23,11 @@ function displayPMovies(){
                                 <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                             </figure>
                             <div class="popularInfo">
-                                <h3>${popularMovie.title}</h3>
+                                <h3>${popularMovie.title.length > 30 ? `${popularMovie.title.slice(0, 30)}...` : `${popularMovie.title}`}</h3>
                                 <p class="rating"><span>&#9733</span> ${popularMovie.vote_average.toFixed(1)}/10 IMDb</p>
                                 <ul>
                                     ${
-                                        popularMovie.genre_ids.map((id)=>{
+                                        popularMovie.genre_ids.slice(0,2).map((id)=>{
                                             return /*html*/`
                                             <li>
                                                 ${genres.find(genre => genre.id == id).name}
@@ -35,6 +35,7 @@ function displayPMovies(){
                                             `
                                         }).join("")
                                     }
+                                    ${popularMovie.genre_ids.length > 2 ? `<li>+${popularMovie.genre_ids.length - 2}</li>` : ""}
                                 </ul>
                                 <p class="runtime" data-id="${popularMovie.id}"></p>
                             </div>
@@ -57,6 +58,7 @@ function displayPMovies(){
             .then((respone) => respone.json())
             .then((runtaimeData) => {elm.innerHTML = `&#x1F550;${Math.floor(runtaimeData.runtime / 60)}h ${Math.floor(runtaimeData.runtime % 60)}min`})
         })
+
 })
 
 }

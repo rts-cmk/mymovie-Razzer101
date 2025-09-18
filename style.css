@@ -211,6 +211,10 @@ h2 {
     margin: 5px 5px;
 }
 
+.popularInfo li:last-child{
+    padding: 5px 10px;
+}
+
 .runtime{
     color: black;
     margin: 0;
