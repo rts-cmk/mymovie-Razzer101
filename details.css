@@ -150,7 +150,7 @@ h2 {
 /* #region Extra Info */
 .extraInfo {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     margin-bottom: 1.8em;
 }
 

@@ -7,7 +7,6 @@ function displayPMovies(){
     })
     .then((respone) => respone.json())
     .then((popularMovies) => {
-        console.log(popularMovies)
         const popularSec = document.querySelector(".popularSec")
         const popularContent = /*html*/ `
             <div class="popularTitle">
@@ -23,7 +22,9 @@ function displayPMovies(){
                                 <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                             </figure>
                             <div class="popularInfo">
-                                <h3>${popularMovie.title.length > 30 ? `${popularMovie.title.slice(0, 30)}...` : `${popularMovie.title}`}</h3>
+                                <h3>
+                                    ${popularMovie.title.length > 30 ? `${popularMovie.title.slice(0, 30)}...` : `${popularMovie.title}`}
+                                </h3>
                                 <p class="rating"><span>&#9733</span> ${popularMovie.vote_average.toFixed(1)}/10 IMDb</p>
                                 <ul>
                                     ${
@@ -56,7 +57,9 @@ function displayPMovies(){
                 }
             })
             .then((respone) => respone.json())
-            .then((runtaimeData) => {elm.innerHTML = `&#x1F550;${Math.floor(runtaimeData.runtime / 60)}h ${Math.floor(runtaimeData.runtime % 60)}min`})
+            .then((runtaimeData) => {elm.innerHTML = `
+                &#x1F550;${Math.floor(runtaimeData.runtime / 60)}h ${Math.floor(runtaimeData.runtime % 60)}min
+            `})
         })
 
 })

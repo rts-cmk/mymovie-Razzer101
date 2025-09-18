@@ -44,6 +44,12 @@ function displayDetail(details){
                 <div class="extraInfo">
                     <p>Length<span>${Math.floor(details.runtime / 60)}h ${Math.floor(details.runtime % 60)}min</span></p>
                     <p>Language<span>${details.spoken_languages[0].english_name}</span></p>
+                    <p>
+                        Release
+                        <span>
+                            ${new Date(details.release_date).getDate()}/${new Date(details.release_date).getMonth() + 1}/${new Date(details.release_date).getFullYear()}
+                        </span>
+                    </p>
                 </div>
                 <div class="description">
                     <h2>Description</h2>
