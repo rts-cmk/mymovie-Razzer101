@@ -16,29 +16,6 @@ const mainObserver = new IntersectionObserver((entries) => {
 })
 
 function mainPage(mainPages){
-    const movieHeader = /*html*/ `
-            <h1>MyMovies</h1>
-            <button id="darkModeBtn"><div></div></button>
-    `
-    mainHeader.insertAdjacentHTML("beforeend", movieHeader)
-
-    const main = /*html*/ `
-        <section class="nowShowingSec">
-            <div class="nowShowingTitle">
-                <h2>Now Showing</h2>
-                <button>See more</button>
-            </div>
-            <div class="movieDisplay"></div>
-        </section>
-        <section class="popularSec">
-            <div class="popularTitle">
-                <h2>Popular</h2>
-                <button>See more</button>
-            </div>
-            <div class="popularDisplay"></div>
-        </section>
-    `
-    mainWrapper.insertAdjacentHTML("beforeend", main)
 
     fetch(`https://api.themoviedb.org/3/movie/now_playing?page=${mainPages}`, {
         headers: {
