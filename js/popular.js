@@ -1,5 +1,20 @@
-function displayPMovies(){
-    fetch("https://api.themoviedb.org/3/movie/popular", {
+let pages = 1
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                    pages++
+                    console.log("loaded", pages)
+                    displayPMovies(pages)
+                }
+            })
+        }, {
+            threshold: 1.0
+        })
+
+function displayPMovies(pages){
+    console.log(`https://api.themoviedb.org/3/movie/popular?page=${pages}`)
+    fetch(`https://api.themoviedb.org/3/movie/popular?page=${pages}`, {
     headers: {
         accept: "application/json",
         Authorization: `Bearer ${token}`
@@ -7,17 +22,12 @@ function displayPMovies(){
     })
     .then((respone) => respone.json())
     .then((popularMovies) => {
-        const popularSec = document.querySelector(".popularSec")
+        const popularDisplay = document.querySelector(".popularDisplay")
         const popularContent = /*html*/ `
-            <div class="popularTitle">
-                <h2>Popular</h2>
-                <button>See more</button>
-            </div>
-            <div class="popularDisplay">
                 ${
-                    popularMovies.results.map((popularMovie) => {
+                    popularMovies.results.map((popularMovie, index) => {
                     return /*html*/`
-                        <a href="/details.html?id=${popularMovie.id}">
+                        <a href="/details.html?id=${popularMovie.id}" popular-id="${index}">
                             <figure>
                                 <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                             </figure>
@@ -44,9 +54,8 @@ function displayPMovies(){
                     `
                     }).join("")
                 }
-            </div>
         `
-        popularSec.insertAdjacentHTML("beforeend", popularContent)
+        popularDisplay.insertAdjacentHTML("beforeend", popularContent)
 
         document.querySelectorAll(".runtime").forEach((elm) => {
             const elmId = elm.getAttribute("data-id")
@@ -62,6 +71,11 @@ function displayPMovies(){
             `})
         })
 
-})
+        let obeserveMovie = document.querySelector(".popularDisplay a:nth-last-child(2)")
+        console.log(obeserveMovie)
+        observer.observe(obeserveMovie)
 
+})
 }
+
+displayPMovies(pages)

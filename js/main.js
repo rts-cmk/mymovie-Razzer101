@@ -40,11 +40,19 @@ function displayMovies(movies){
                 }
             </div>
         </section>
-        <section class="popularSec"></section>
+        <section class="popularSec">
+            <div class="popularTitle">
+                <h2>Popular</h2>
+                <button>See more</button>
+            </div>
+            <div class="popularDisplay">
+            
+            </div>
+        </section>
     `
     mainWrapper.insertAdjacentHTML("beforeend", movieContent)
 
-    displayPMovies()
+    displayPMovies(1)
 
     const darkModeBtn = mainHeader.querySelector("#darkModeBtn")
     darkModeBtn.addEventListener("click", handleDarkModeBtn)

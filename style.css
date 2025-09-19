@@ -72,6 +72,13 @@ h2 {
     display: flex;
     overflow: auto;
     white-space: nowrap;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+
+    & a {
+        scroll-snap-stop: always;
+        scroll-snap-align: center;
+    }
 }
 
 .movieDisplay::-webkit-scrollbar {
