@@ -12,7 +12,6 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 function displayPMovies(pages){
-    console.log(pages)
     const popularMoviesFetch = fetch(`https://api.themoviedb.org/3/movie/popular?page=${pages}`, {
     headers: {
         accept: "application/json",
@@ -81,9 +80,9 @@ function displayPMovies(pages){
             `})
         })
 
-        let obeserveMovie = document.querySelector(".popularDisplay a:nth-last-child(2)")
-        observer.disconnect(obeserveMovie)
-        observer.observe(obeserveMovie)
+        let obeservePMovie = document.querySelector(".popularDisplay a:nth-last-child(2)")
+        observer.disconnect(obeservePMovie)
+        observer.observe(obeservePMovie)
 
 })
 }
