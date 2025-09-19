@@ -52,7 +52,7 @@ function displayMovies(movies){
     `
     mainWrapper.insertAdjacentHTML("beforeend", movieContent)
 
-    displayPMovies(1)
+    displayPMovies
 
     const darkModeBtn = mainHeader.querySelector("#darkModeBtn")
     darkModeBtn.addEventListener("click", handleDarkModeBtn)

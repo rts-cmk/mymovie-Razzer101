@@ -1,33 +1,43 @@
 let pages = 1
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if(entry.isIntersecting){
-                    pages++
-                    console.log("loaded", pages)
-                    displayPMovies(pages)
-                }
-            })
-        }, {
-            threshold: 1.0
-        })
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            pages++
+            displayPMovies(pages)
+        }
+    })
+},{
+    threshold: 1.0
+})
 
 function displayPMovies(pages){
-    console.log(`https://api.themoviedb.org/3/movie/popular?page=${pages}`)
-    fetch(`https://api.themoviedb.org/3/movie/popular?page=${pages}`, {
+    console.log(pages)
+    const popularMoviesFetch = fetch(`https://api.themoviedb.org/3/movie/popular?page=${pages}`, {
     headers: {
         accept: "application/json",
         Authorization: `Bearer ${token}`
     }
     })
     .then((respone) => respone.json())
-    .then((popularMovies) => {
+
+    const genresFetch = fetch("https://api.themoviedb.org/3/genre/movie/list", {
+    headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${token}`
+    }
+    })
+    .then((respone) => respone.json())
+
+    Promise.all([popularMoviesFetch, genresFetch])
+    .then(([popularMovies, genresData]) => {
+        const genres = genresData.genres
         const popularDisplay = document.querySelector(".popularDisplay")
         const popularContent = /*html*/ `
                 ${
                     popularMovies.results.map((popularMovie, index) => {
                     return /*html*/`
-                        <a href="/details.html?id=${popularMovie.id}" popular-id="${index}">
+                        <a href="/details.html?id=${popularMovie.id}">
                             <figure>
                                 <img src="${baseImgUrl + popularMovie.poster_path}" alt="${popularMovie.title} (Banner)">
                             </figure>
@@ -72,7 +82,7 @@ function displayPMovies(pages){
         })
 
         let obeserveMovie = document.querySelector(".popularDisplay a:nth-last-child(2)")
-        console.log(obeserveMovie)
+        observer.disconnect(obeserveMovie)
         observer.observe(obeserveMovie)
 
 })

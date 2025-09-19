@@ -14,7 +14,6 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,video
 .then((details) => {displayDetail(details)})
 
 function displayDetail(details){
-    console.log(details)
     const detailsContent = /*html*/ `
         <section class="trailerSec" style="background-image: url('${baseImgUrl + details.poster_path}');">
             <a class="backToMain" href="index.html">&#11104;</a>
